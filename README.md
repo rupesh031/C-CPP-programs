@@ -1,3 +1,7 @@
 # C-programs
-Linked List
-Stack application- infix epression,post fix expression
+Linked List- add,delte,reverse
+
+Doubly Linked List- add,delte,reverse
+
+Stack application- infix epression,post fix expression,balanced parenthesis
+
