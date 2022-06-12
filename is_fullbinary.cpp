@@ -1,17 +1,18 @@
 #include <iostream>
+#include <queue>
 using namespace std;
+
 struct Node{
     int data;
     Node* left;
     Node* right;
 };
-Node* root;
 
 Node* create(int data)
 {
 Node* node= new Node();
 node->data=data;
-cout<<node->data;
+
 node->left=NULL;
 node->right=NULL;
 return node;
@@ -24,7 +25,6 @@ void insert(Node* root,int data)
     Node* arr[20];
     arr[0]=root;
     int f=0;
-    cout<<arr[0]->data;
     while(1)
     {
         if(arr[i]->left!=NULL)
@@ -39,28 +39,69 @@ void insert(Node* root,int data)
                 else
                 {
                     arr[i]->right=create(data);
-                    cout<<endl<<arr[i]->left->data;
+                  
                     break;
                 }
             }
         else
         {
             arr[i]->left=create(data);
-            cout<<"right"<<endl;
+           
             break;
         }
         i++;
     }
     return;
 }
+
+void inorder(Node* root)
+{
+    if (!root)
+    return;
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right);
+}
+
+bool is_full(Node* node)
+{
+    bool a,b;
+    Node* n1=node->left;
+    Node* n2=node->right;
+    if( (n1&&n2) || ((!n1)&&(!n2)))
+    {
+        if(n1&&n2)
+        {
+             a=is_full(n1);
+             b=is_full(n2);
+        } 
+        else
+        {
+            return true;
+        }
+    
+    }
+    else
+    {
+        return false;
+    }
+    return a&&b;
+}
+
 int main()
 {
-    cout<<"start"<<endl;
-    root=create(1);
-    root->left=create(2);
-    root->right=create(3);
-    root->left->left=create(4);
-    root->right->left=create(6);
+    Node* root=create(1);
+    insert(root,2);
+    insert(root,3);
+    insert(root,4);
     insert(root,5);
+    cout<<endl;
+    inorder(root);
+    cout<<endl;
+    cout<<"f";
+    bool f=is_full(root);
+    cout<<endl;
+    if (f) cout<<"full binary";
+    else cout<<"not full binary";
     return 0;
 }
