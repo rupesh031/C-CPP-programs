@@ -27,12 +27,12 @@ void inorder(struct Node* node)
 }
 void preorder(struct Node* node)
 {
+    if (!node)
+        return;
     printf("%d ",node->data);
-    if(node->left==NULL)
-    return;
     preorder(node->left);
-    if(node->right)
     preorder(node->right);
+   
 
 }
 void postorder(struct Node* node)
@@ -40,8 +40,8 @@ void postorder(struct Node* node)
     if(node==NULL)
     return;
     postorder(node->left);
-    printf("%d ",node->data);
     postorder(node->right);
+    printf("%d ",node->data);
 }
 int main()
 {
@@ -50,7 +50,11 @@ int main()
     root->right=new(3);
     root->left->left=new(4);
     root->left->right=new(5);
-     root->left->right->left=new(6);
+    printf("in-order \n");
+    inorder(root);
+     printf("\npre-order \n");
     preorder(root);
+    printf("\npost-order \n");
+    postorder(root);
     return 0;
 }

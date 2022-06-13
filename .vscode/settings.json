@@ -4,6 +4,9 @@
         "xstring": "cpp",
         "xutility": "cpp",
         "iostream": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "ostream": "cpp",
+        "cstdlib": "cpp",
+        "utility": "cpp"
     }
 }
