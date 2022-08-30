@@ -1,14 +1,16 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled",
-    "files.associations": {
-        "xstring": "cpp",
-        "xutility": "cpp",
-        "iostream": "cpp",
-        "queue": "cpp",
-        "ostream": "cpp",
-        "cstdlib": "cpp",
-        "utility": "cpp",
-        "xiosbase": "cpp",
-        "unordered_map": "cpp"
-    }
+  "C_Cpp.errorSquiggles": "Disabled",
+  "files.associations": {
+    "xstring": "cpp",
+    "xutility": "cpp",
+    "iostream": "cpp",
+    "queue": "cpp",
+    "ostream": "cpp",
+    "cstdlib": "cpp",
+    "utility": "cpp",
+    "xiosbase": "cpp",
+    "unordered_map": "cpp",
+    "xhash": "cpp",
+    "exception": "cpp"
+  }
 }
